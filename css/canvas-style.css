@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.canvas-container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.controls {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.color-picker, .brush-size {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#clear-canvas {
+    background-color: #f44336;
+}
+
+#clear-canvas:hover {
+    background-color: #d32f2f;
+}
+
+#drawing-canvas {
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    cursor: crosshair;
+}
+    /* Memory Game Styles */
+    #game-board {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        max-width: 600px;
+    }
+    
+    .memory-card {
+        height: 120px;
+        background-color: #2c3e50;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+        position: relative;
+    }
+    
+    .memory-card.flipped {
+        transform: rotateY(180deg);
+    }
+    
+    .memory-card.matched {
+        background-color: #27ae60;
+        cursor: default;
+    }
+    
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+    }
+    
+    .card-front {
+        background-color: white;
+        transform: rotateY(180deg);
+    }
+    
+    .card-back {
+        background-color: #3498db;
+        color: white;
+        font-size: 24px;
+    }
+    
+    .card-icon {
+        font-size: 40px;
+        color: #2c3e50;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        #game-board {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        
+        .memory-card {
+            height: 80px;
+        }
+        
+        .card-icon {
+            font-size: 30px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        #game-board {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .memory-card {
+            height: 70px;
+        }
+        
+        .card-icon {
+            font-size: 24px;
+        }
+    }
