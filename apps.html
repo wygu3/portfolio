@@ -69,6 +69,19 @@
         #save-canvas:hover {
             background-color: #45a049;
         }
+        
+        #undo-canvas {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        #undo-canvas:hover {
+            background-color: #0b7dda;
+        }
     </style>
 </head>
 <body>
@@ -107,6 +120,7 @@
                     <span id="size-display">5px</span>
                 </div>
                 
+                <button id="undo-canvas"><i class="fas fa-undo"></i> Undo</button>
                 <button id="clear-canvas">Clear Canvas</button>
                 <button id="save-canvas">Save Drawing</button>
             </div>
